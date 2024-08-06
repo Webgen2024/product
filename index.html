@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Website with Add to Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#" onclick="showCart()">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="#" onclick="showSignUpForm()">Sign Up</a></li>
+                <li><a href="#" onclick="showLoginForm()">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+    <main>
+        <h1>Products</h1>
+
+        <div class="product" data-id="1">
+            <h2>Iphone 15</h2>
+            <img src="download.jpeg">
+            <p>Price: $10</p>
+          <marquee><desc>With Charger</desc></marquee>  <br>
+            <button onclick="addToCart(1)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="2">
+            <img src="download.jpeg">
+            <h2>Iphone 15 plus</h2>
+            <p>Price: $15</p>
+            <button onclick="addToCart(2)">Add to Cart</button>
+        </div>
+    </main>
+
+
+    <!-- Cart -->
+    <div id="cart" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cart')">&times;</span>
+            <h2>Your Cart</h2>
+
+            <div id="cart-items">                </div>
+            
+            <button onclick="clearCart()">Clear Cart</button>
+        </div>
+    </div>
+
+
+    <!-- Sign Up Form -->
+    <div id="signup-form" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signup-form')">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signUpForm">
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Login Form -->
+    <div id="login-form" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('login-form')">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="login-username" required><br><br>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required><br><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
